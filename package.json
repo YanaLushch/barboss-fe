@@ -1,0 +1,98 @@
+{
+  "name": "framework7-template",
+  "version": "1.0.0-beta.0",
+  "private": true,
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.2",
+    "@testing-library/react": "^10.4.7",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.8",
+    "@types/react": "^16.9.29",
+    "@types/react-dom": "^16.9.5",
+    "@types/react-router-dom": "^5.1.4",
+    "@types/styled-components": "^5.1.0",
+    "framework7": "^5.7.12",
+    "framework7-react": "^5.7.12",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.2.2",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "styled-components": "^5.1.0",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "2.26.0",
+    "@typescript-eslint/parser": "2.26.0",
+    "babel-eslint": "10.1.0",
+    "eslint": "6.8.0",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-loader": "3.0.3",
+    "eslint-plugin-import": "2.20.2",
+    "eslint-plugin-react": "7.19.0",
+    "eslint-plugin-react-hooks": "3.0.0",
+    "husky": "^4.2.5",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "jest-styled-components": "^7.0.2",
+    "lint-staged": "^10.2.7",
+    "plop": "^2.6.0",
+    "prettier": "2.0.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "<rootDir>/src/components/**/*.{jsx,tsx}",
+      "<rootDir>/src/containers/**/*.{jsx,tsx}",
+      "<rootDir>/src/pages/**/*.{jsx,tsx}",
+      "!<rootDir>/src/pages/Root.tsx",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    },
+    "coverageReporters": [
+      "text"
+    ]
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --silent --env=jest-environment-jsdom-sixteen",
+    "coverage": "react-scripts test --silent --coverage --watchAll=false --passWithNoTests --env=jest-environment-jsdom-sixteen",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
+    "prettier": "prettier --find-config-path --write '**/*.{ts,js,tsx,jsx,css,json}'",
+    "make": "plop --plopfile ./bin/templates/index.js"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,js,tsx,jsx,css,json}": [
+      "yarn lint",
+      "yarn prettier"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn coverage && yarn audit-ci && lint-staged"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

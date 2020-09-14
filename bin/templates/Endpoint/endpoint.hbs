@@ -1,0 +1,34 @@
+import { get, post, put, remove } from "../core/http";
+import { commonStore } from "../core/common";
+
+export interface {{pascalCase name}} {
+  id: string;
+}
+
+export class {{pascalCase name}}Api {
+  static get endpoint(): string {
+    return `/api/base/${commonStore.getApiParam("accountNumber")}/{{camelCase name}}`;
+  }
+
+  // api actions
+
+  static get(id: string): Promise<{{pascalCase name}}> {
+    return get<{{pascalCase name}}>(`${this.endpoint}/${id}`);
+  }
+
+  static getAll(): Promise<{{pascalCase name}}[]> {
+    return get<{{pascalCase name}}[]>(`${this.endpoint}`);
+  }
+  
+  static post({{camelCase name}}: {{pascalCase name}}): Promise<{{pascalCase name}}> {
+    return post<{{pascalCase name}}>(`${this.endpoint}`, { body: {{camelCase name}} });
+  }
+
+  static put(id: string, {{camelCase name}}: {{pascalCase name}}): Promise<{{pascalCase name}}> {
+    return put<{{pascalCase name}}>(`${this.endpoint}/${id}`, { body: {{camelCase name}} });
+  }
+
+  static remove(id: string): Promise<{{pascalCase name}}> {
+    return remove<{{pascalCase name}}>(`${this.endpoint}/${id}`);
+  }
+}

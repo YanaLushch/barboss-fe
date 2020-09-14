@@ -1,0 +1,20 @@
+import React from "react";
+
+import { cleanup, render } from "@testing-library/react";
+
+import commonStoreMock from "../../__mocks__/CommonStoreMock";
+import { routerTestProps } from "../../core/utils/tests";
+import { {{pascalCase name}}Page } from "./{{pascalCase name}}Page";
+
+afterEach(cleanup);
+
+describe("{{pascalCase name}}", () => {
+  it("matches snapshot", async () => {
+    const routeComponentProps = routerTestProps('/route/:id', { someParam: '1' });
+    const { asFragment, container } = render(
+      <{{pascalCase name}}Page {...routeComponentProps} common={commonStoreMock} />
+    );
+    expect(container).toBeDefined();
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

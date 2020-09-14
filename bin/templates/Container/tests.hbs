@@ -1,0 +1,15 @@
+import React from "react";
+import { cleanup, render } from "@testing-library/react";
+import { {{pascalCase name}} } from "./{{pascalCase name}}";
+
+afterEach(cleanup);
+
+describe("{{pascalCase name}}", () => {
+  it("matches snapshot", async () => {
+    const { asFragment, container } = render(
+      <{{pascalCase name}} textProp="test" />
+    );
+    expect(container).toBeDefined();
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

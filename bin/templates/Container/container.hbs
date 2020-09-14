@@ -1,0 +1,28 @@
+import { inject, observer } from "mobx-react";
+import React, { FC } from "react";
+import { Container } from "./{{pascalCase name}}.styles";
+import { CommonStore } from "../../core/common/CommonStore";
+
+type InjectedProps = {
+  commonStore: CommonStore;
+};
+
+type {{pascalCase name}}Props = {
+  textProp?: string;
+};
+
+export const {{pascalCase name}}: FC<{{pascalCase name}}Props & InjectedProps> = ({ textProp }) => {
+  // add state here
+
+  return (
+    <Container>
+      Empty component
+    </Container>
+  );
+};
+
+{{pascalCase name}}.displayName = "{{pascalCase name}}";
+
+export default (inject("commonStore")(observer({{pascalCase name}})) as unknown) as FC<
+  {{pascalCase name}}Props
+>;

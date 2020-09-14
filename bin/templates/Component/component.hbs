@@ -1,0 +1,18 @@
+import React, { FC } from "react";
+import { Container } from "./{{pascalCase name}}.styles";
+
+type {{pascalCase name}}Props = {
+  textProp?: string;
+};
+
+export const {{pascalCase name}}: FC<{{pascalCase name}}Props> = ({ textProp }) => {
+  return (
+    <Container>
+      Empty component
+    </Container>
+  );
+};
+
+{{pascalCase name}}.displayName = "{{pascalCase name}}";
+
+export default {{pascalCase name}}
