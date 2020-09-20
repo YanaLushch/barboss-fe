@@ -1,3 +1,3 @@
 import { MainPage } from "./pages/main";
 
-export default [{ path: "/", component: MainPage }];
+export default [{ path: "/test", component: MainPage }];

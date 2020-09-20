@@ -2,6 +2,8 @@ import React, { FC } from "react";
 import { App, View } from "framework7-react";
 import routes from "../routes";
 
+
+
 // import MainPage from "./main/MainPage";
 // import UserErrors from "../core/common/containers/UserErrors/UserErrors";
 // import LoadingPage from "../core/common/containers/LoadingPage/LoadingPage";

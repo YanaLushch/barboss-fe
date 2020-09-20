@@ -1,7 +1,6 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 
 import { inject, observer } from "mobx-react";
-import { RouteComponentProps } from "react-router";
 
 import {
   Page,
@@ -14,6 +13,7 @@ import {
   Popup,
   Block,
   Button,
+  f7ready,
 } from "framework7-react";
 
 import { CommonStore } from "../../core/common/CommonStore";
@@ -23,15 +23,14 @@ type InjectedProps = {
   commonStore: CommonStore;
 };
 
-type RouteProps = {
-  someParam: string;
-};
-
-export const MainPage: FC<RouteComponentProps<RouteProps> & InjectedProps> = ({
-  commonStore,
-  match,
-}) => {
+export const MainPage: FC<RouteParams & InjectedProps> = ({ f7router }) => {
   useScrollToTop();
+
+  useEffect(() => {
+    f7ready((f7) => {
+      console.log("f7 ", f7);
+    });
+  }, [f7router]);
 
   return (
     <Page>
@@ -70,6 +69,4 @@ export const MainPage: FC<RouteComponentProps<RouteProps> & InjectedProps> = ({
 
 MainPage.displayName = "MainPage";
 
-export default (inject("commonStore")(observer(MainPage)) as unknown) as FC<
-  RouteComponentProps<RouteProps>
->;
+export default (inject("commonStore")(observer(MainPage)) as unknown) as FC;
