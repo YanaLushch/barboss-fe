@@ -1,7 +1,4 @@
 module.exports = function (plop) {
-  plop.setHelper("reactPageComponent", function (text) {
-    return `{${text}Page}`;
-  });
   plop.setHelper("reactPageComponentImport", function (text) {
     return `{ ${text}Page }`;
   });
@@ -39,7 +36,7 @@ module.exports = function (plop) {
       {
         type: "add",
         path: "../../src/components/{{pascalCase name}}/index.ts",
-        template: `export { default } from "./{{pascalCase name}}";\n`,
+        template: `export * from "./{{pascalCase name}}";\n`,
       },
     ],
   });
@@ -74,7 +71,7 @@ module.exports = function (plop) {
       {
         type: "add",
         path: "../../src/containers/{{pascalCase name}}/index.ts",
-        template: `export { default } from "./{{pascalCase name}}";\n`,
+        template: `export * from "./{{pascalCase name}}";\n`,
       },
     ],
   });
@@ -108,21 +105,21 @@ module.exports = function (plop) {
       {
         type: "add",
         path: "../../src/pages/{{camelCase name}}/index.ts",
-        template: `export { default } from "./{{pascalCase name}}Page";\n`,
+        template: `export * from "./{{pascalCase name}}Page";\n`,
       },
       {
         type: "modify",
-        path: "../../src/pages/Root.tsx",
+        path: "../../src/routes.ts",
         pattern: /(\/\/ append pages imports here)/gi,
         template:
-          'import {{pascalCase name}}Page from "./{{camelCase name}}/{{pascalCase name}}Page";\r\n$1',
+          'import {{reactPageComponentImport (pascalCase name)}} from "./pages/{{camelCase name}}";\r\n$1',
       },
       {
         type: "modify",
-        path: "../../src/pages/Root.tsx",
-        pattern: /(\{\/\* append pages routes here \*\/\})/gi,
+        path: "../../src/routes.ts",
+        pattern: /(\/\* append pages routes here \*\/)/gi,
         template:
-          '<Route path="/{{dashCase name}}" component={{reactPageComponent (pascalCase name)}} />\r\n        $1',
+          '{ path: "/{{dashCase name}}", component: {{pascalCase name}}Page },\r\n        $1',
       },
     ],
   });
