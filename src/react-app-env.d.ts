@@ -38,8 +38,10 @@ interface RouteParams {
       /** route name */
       name: string;
       /** route params */
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       params: any;
       /** route query */
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       query: any;
     }): string;
     /** Navigate to (load) new page */

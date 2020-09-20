@@ -79,7 +79,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn coverage && yarn audit-ci && lint-staged"
+      "pre-commit": "yarn coverage && lint-staged"
     }
   },
   "browserslist": {
