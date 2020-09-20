@@ -1,30 +1,21 @@
-import { inject, observer } from "mobx-react";
 import React, { FC } from "react";
-import { RouteComponentProps } from "react-router";
 
-import { Layout } from "./{{pascalCase name}}Page.styles";
-import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { inject, observer } from "mobx-react";
+
 import { CommonStore } from "../../core/common/CommonStore";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { Page } from "./{{pascalCase name}}Page.styles";
 
 type InjectedProps = {
   commonStore: CommonStore;
 };
 
-type RouteProps = {
-  someParam: string;
-};
-
-export const {{pascalCase name}}Page: FC<RouteComponentProps<RouteProps> & InjectedProps> = ({ match }) => {
+export const {{pascalCase name}}Page: FC<RouteParams & InjectedProps> = ({ f7route }) => {
   useScrollToTop();
-  return (
-    <Layout layoutType="narrow">
-      {{pascalCase name}} page
-    </Layout>
-  );
+
+  return <Page>{{pascalCase name}} page</Page>;
 };
 
 {{pascalCase name}}Page.displayName = "{{pascalCase name}}Page";
 
-export default (inject("commonStore")(observer({{pascalCase name}}Page)) as unknown) as FC<
-  RouteComponentProps<RouteProps>
->;
+export default (inject("commonStore")(observer({{pascalCase name}}Page)) as unknown) as FC;

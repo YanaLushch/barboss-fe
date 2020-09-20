@@ -30,12 +30,12 @@ module.exports = function (plop) {
           "../../src/components/{{pascalCase name}}/{{pascalCase name}}.styles.ts",
         templateFile: "./Component/styles.hbs",
       },
-      {
-        type: "add",
-        path:
-          "../../src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx",
-        templateFile: "./Component/tests.hbs",
-      },
+      // {
+      //   type: "add",
+      //   path:
+      //     "../../src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx",
+      //   templateFile: "./Component/tests.hbs",
+      // },
       {
         type: "add",
         path: "../../src/components/{{pascalCase name}}/index.ts",
@@ -65,12 +65,12 @@ module.exports = function (plop) {
           "../../src/containers/{{pascalCase name}}/{{pascalCase name}}.styles.ts",
         templateFile: "./Container/styles.hbs",
       },
-      {
-        type: "add",
-        path:
-          "../../src/containers/{{pascalCase name}}/{{pascalCase name}}.test.tsx",
-        templateFile: "./Container/tests.hbs",
-      },
+      // {
+      //   type: "add",
+      //   path:
+      //     "../../src/containers/{{pascalCase name}}/{{pascalCase name}}.test.tsx",
+      //   templateFile: "./Container/tests.hbs",
+      // },
       {
         type: "add",
         path: "../../src/containers/{{pascalCase name}}/index.ts",
@@ -99,12 +99,12 @@ module.exports = function (plop) {
           "../../src/pages/{{camelCase name}}/{{pascalCase name}}Page.styles.ts",
         templateFile: "./Page/styles.hbs",
       },
-      {
-        type: "add",
-        path:
-          "../../src/pages/{{pascalCase name}}/{{pascalCase name}}Page.test.tsx",
-        templateFile: "./Page/tests.hbs",
-      },
+      // {
+      //   type: "add",
+      //   path:
+      //     "../../src/pages/{{pascalCase name}}/{{pascalCase name}}Page.test.tsx",
+      //   templateFile: "./Page/tests.hbs",
+      // },
       {
         type: "add",
         path: "../../src/pages/{{camelCase name}}/index.ts",
