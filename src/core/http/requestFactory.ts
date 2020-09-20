@@ -45,7 +45,7 @@ const requestFactory = (
       });
 
       if (res.ok) {
-        return await res.json() as T;
+        return (await res.json()) as T;
       }
 
       return Promise.reject({ method, status: res.status });

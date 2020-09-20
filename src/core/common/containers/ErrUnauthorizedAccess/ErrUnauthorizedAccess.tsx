@@ -15,9 +15,7 @@ export const ErrUnauthorizedAccess: FC<InjectedProps> = ({ commonStore }) => {
 
   if (!latestError) return null;
 
-  return (
-    <MessagePage>Unauthorized access</MessagePage>
-  );
+  return <MessagePage>Unauthorized access</MessagePage>;
 };
 
 ErrUnauthorizedAccess.displayName = "UnauthorizedAccess";

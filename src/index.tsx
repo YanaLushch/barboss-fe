@@ -4,8 +4,8 @@ import { Provider } from "mobx-react";
 import React from "react";
 import ReactDOM from "react-dom";
 
-import Framework7 from 'framework7/framework7-lite.esm.bundle.js';
-import Framework7React from 'framework7-react';
+import Framework7 from "framework7/framework7-lite.esm.bundle.js";
+import Framework7React from "framework7-react";
 
 import Root from "./pages/Root";
 import stores from "./stores";
