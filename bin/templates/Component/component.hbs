@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Container } from "./{{pascalCase name}}.styles";
+import { GlobalStyles, Container } from "./{{pascalCase name}}.styles";
 
 type {{pascalCase name}}Props = {
   textProp?: string;
@@ -8,6 +8,7 @@ type {{pascalCase name}}Props = {
 export const {{pascalCase name}}: FC<{{pascalCase name}}Props> = ({ textProp }) => {
   return (
     <Container>
+      <GlobalStyles />
       Empty component
     </Container>
   );

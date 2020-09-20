@@ -4,7 +4,7 @@ import { inject, observer } from "mobx-react";
 
 import { CommonStore } from "../../core/common/CommonStore";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { Page } from "./{{pascalCase name}}Page.styles";
+import { GlobalStyles } from "./{{pascalCase name}}Page.styles";
 
 type InjectedProps = {
   commonStore: CommonStore;
@@ -13,7 +13,11 @@ type InjectedProps = {
 export const {{pascalCase name}}Page: FC<RouteParams & InjectedProps> = ({ f7route }) => {
   useScrollToTop();
 
-  return <Page>{{pascalCase name}} page</Page>;
+  return (
+    <Page>
+      <GlobalStyles />
+    </Page>
+  );
 };
 
 {{pascalCase name}}Page.displayName = "{{pascalCase name}}Page";

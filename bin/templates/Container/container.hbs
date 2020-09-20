@@ -4,7 +4,7 @@ import { inject, observer } from "mobx-react";
 
 import { CommonStore } from "../../core/common/CommonStore";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { Container } from "./{{pascalCase name}}.styles";
+import { GlobalStyles, Container } from "./{{pascalCase name}}.styles";
 
 type InjectedProps = {
   commonStore: CommonStore;
@@ -19,7 +19,7 @@ export const {{pascalCase name}}: FC<{{pascalCase name}}Props & InjectedProps> =
 
   return (
     <Container>
-      Empty container
+      <GlobalStyles />
     </Container>
   );
 };
