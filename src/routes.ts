@@ -1,4 +1,5 @@
-import { MainPage } from "./pages/main";
+import MainPage from "./pages/main/MainPage";
+
 // append pages imports here
 
 export default [

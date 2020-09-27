@@ -72,7 +72,7 @@ export class CommonStore {
 
   @action.bound
   clearToasts(): void {
-    this.toasts = [];
+    this.toasts.length = 0;
   }
 
   // Errors
@@ -83,7 +83,7 @@ export class CommonStore {
 
   @action.bound
   clearErrors(): void {
-    this.errors = [];
+    this.errors.length = 0;
   }
 }
 
