@@ -114,13 +114,13 @@ module.exports = function (plop) {
         template:
           'import {{reactPageComponentImport (pascalCase name)}} from "./pages/{{camelCase name}}";\r\n$1',
       },
-      {
-        type: "modify",
-        path: "../../src/pages/Root.tsx",
-        pattern: /(\/\/ append pages imports here)/gi,
-        template:
-          'import {{reactPageComponentImport (pascalCase name)}} from "./pages/{{camelCase name}}";\r\n$1',
-      },
+      // {
+      //   type: "modify",
+      //   path: "../../src/pages/Root.tsx",
+      //   pattern: /(\/\/ append pages imports here)/gi,
+      //   template:
+      //     'import {{reactPageComponentImport (pascalCase name)}} from "./{{camelCase name}}";\r\n$1',
+      // },
       {
         type: "modify",
         path: "../../src/routes.ts",
