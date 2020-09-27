@@ -4,6 +4,7 @@ import { Link, Navbar, NavTitle, Page, Toolbar } from "framework7-react";
 import { inject, observer } from "mobx-react";
 
 import { CommonStore } from "../../core/common/CommonStore";
+import { ActionFailed } from "../../core/errors";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 
 type InjectedProps = {
@@ -20,7 +21,13 @@ export const MainPage: FC<RouteParams & InjectedProps> = ({ f7route }) => {
       </Navbar>
       <Toolbar bottom={true}>
         <Link>Link 1</Link>
-        <Link>Link 2</Link>
+        <Link
+          onClick={(): void => {
+            throw new ActionFailed("Test", "Test");
+          }}
+        >
+          Make error
+        </Link>
       </Toolbar>
     </Page>
   );

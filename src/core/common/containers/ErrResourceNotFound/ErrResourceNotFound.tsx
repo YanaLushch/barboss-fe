@@ -46,7 +46,7 @@ export const ErrResourceNotFound: FC<InjectedProps> = ({ commonStore }) => {
   );
 };
 
-ErrResourceNotFound.displayName = "ResourceNotFound";
+ErrResourceNotFound.displayName = "ErrResourceNotFound";
 
 export default (inject("commonStore")(
   observer(ErrResourceNotFound)

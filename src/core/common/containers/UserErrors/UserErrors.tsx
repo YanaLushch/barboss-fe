@@ -4,7 +4,10 @@ import { f7ready } from "framework7-react";
 import { inject, observer } from "mobx-react";
 
 import { CommonStore } from "../../CommonStore";
+import ErrActionFailed from "../ErrActionFailed/ErrActionFailed";
 import ErrResourceNotFound from "../ErrResourceNotFound/ErrResourceNotFound";
+import ErrUnauthorizedAccess from "../ErrUnauthorizedAccess/ErrUnauthorizedAccess";
+import ErrUnexpectedError from "../ErrUnexpectedError/ErrUnexpectedError";
 
 type InjectedProps = {
   commonStore: CommonStore;
@@ -23,6 +26,9 @@ export const UserErrors: FC<InjectedProps> = ({ commonStore }) => {
   return (
     <div>
       <ErrResourceNotFound />
+      <ErrUnauthorizedAccess />
+      <ErrUnexpectedError />
+      <ErrActionFailed />
     </div>
   );
 };
