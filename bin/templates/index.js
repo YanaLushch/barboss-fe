@@ -119,7 +119,7 @@ module.exports = function (plop) {
         path: "../../src/routes.ts",
         pattern: /(\/\* append pages routes here \*\/)/gi,
         template:
-          '{ path: "/{{dashCase name}}", component: {{pascalCase name}}Page },\r\n        $1',
+          '{ path: "/{{dashCase name}}", component: {{pascalCase name}}Page },\r\n  $1',
       },
     ],
   });
