@@ -1,8 +1,7 @@
-import MainPage from "./pages/main/MainPage";
-
+import { LoginPage } from "./pages/login";
 // append pages imports here
 
 export default [
-  { path: "/", component: MainPage },
+  { path: "/", component: LoginPage },
   /* append pages routes here */
 ];

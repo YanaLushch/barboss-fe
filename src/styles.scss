@@ -1,1 +1,12 @@
 @import "../node_modules/framework7/css/framework7.bundle.min.css";
+
+:root {
+  .theme-dark {
+    --f7-theme-color: #39e991;
+    --f7-page-bg-color: #262833;
+    --f7-button-text-transform: none;
+    --f7-button-border-radius: 7px;
+    --f7-button-padding-horizontal: 16px;
+    --f7-button-small-height: 28px;
+  }
+}
