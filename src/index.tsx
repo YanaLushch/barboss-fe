@@ -1,4 +1,5 @@
 import "./styles.scss";
+import "framework7-icons";
 
 import { Provider } from "mobx-react";
 import React from "react";

@@ -1,11 +1,10 @@
 import React, { FC } from "react";
 
-import { Page } from "framework7-react";
 import { inject, observer } from "mobx-react";
 
 import { CommonStore } from "../../core/common/CommonStore";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { GlobalStyles } from "./{{pascalCase name}}Page.styles";
+import { GlobalStyles, Page } from "./{{pascalCase name}}Page.styles";
 
 type InjectedProps = {
   commonStore: CommonStore;

@@ -10,7 +10,7 @@ import routes from "../routes";
 
 const Root: FC = () => {
   return (
-    <App params={{ routes, autoDarkTheme: true }}>
+    <App params={{ routes }} themeDark={true}>
       <View main={true}>
         <UserErrors />
       </View>
