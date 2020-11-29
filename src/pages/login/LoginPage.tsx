@@ -2,17 +2,12 @@ import React, { FC } from "react";
 
 import { inject, observer } from "mobx-react";
 
-import { CommonStore } from "../../core/common/CommonStore";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import { GlobalStyles, Page } from "./LoginPage.styles";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { WideButton } from "../../components/WideButton";
 
-type InjectedProps = {
-  commonStore: CommonStore;
-};
-
-export const LoginPage: FC<RouteParams & InjectedProps> = ({ f7route }) => {
+export const LoginPage: FC<RouteParams> = ({ f7route }) => {
   useScrollToTop();
 
   return (
@@ -33,4 +28,4 @@ export const LoginPage: FC<RouteParams & InjectedProps> = ({ f7route }) => {
 
 LoginPage.displayName = "LoginPage";
 
-export default (inject("commonStore")(observer(LoginPage)) as unknown) as FC;
+export default (inject()(observer(LoginPage)) as unknown) as FC;
