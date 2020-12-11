@@ -1,4 +1,4 @@
-image: node:10-alpine
+image: node:15-alpine
 
 stages:
   - lint
@@ -9,9 +9,6 @@ cache:
   paths:
     - node_modules/
   untracked: true
-
-variables:
-  DOCKER_DRIVER: overlay2
 
 before_script:
   - yarn install --frozen-lockfile
@@ -35,12 +32,13 @@ build:
       - build/
 
 publish-to-s3:
+  image: python:latest
   stage: publish-to-s3
   dependencies:
     - build
   only:
       - tags
   before_script:
-    - ''
+    - pip install awscli
   script:
     - aws s3 sync ./build s3://barboss --delete
