@@ -1,0 +1,46 @@
+image: node:10-alpine
+
+stages:
+  - lint
+  - build
+  - publish-to-s3
+
+cache:
+  paths:
+    - node_modules/
+  untracked: true
+
+variables:
+  DOCKER_DRIVER: overlay2
+
+before_script:
+  - yarn install --frozen-lockfile
+
+lint:
+  stage: lint
+  script:
+    - yarn lint
+
+build:
+  stage: build
+  only:
+    - tags
+  script:
+    - CI=false
+    - yarn build
+    - CI=true
+  artifacts:
+    untracked: false
+    paths:
+      - build/
+
+publish-to-s3:
+  stage: publish-to-s3
+  dependencies:
+    - build
+  only:
+      - tags
+  before_script:
+    - ''
+  script:
+    - aws s3 sync ./build s3://barboss --delete
