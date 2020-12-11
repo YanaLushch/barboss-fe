@@ -16,10 +16,10 @@ export const LoginPage: FC<RouteParams> = ({ f7route }) => {
       <div>
         <Logo />
         <WideButton fill={true} iconF7="logo_facebook">
-          Login with Facebook
+          Login with Facebook1
         </WideButton>
         <WideButton fill={true} iconF7="logo_google">
-          Login with Google
+          Login with Google1
         </WideButton>
       </div>
     </Page>
