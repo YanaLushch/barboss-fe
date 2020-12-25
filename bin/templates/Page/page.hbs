@@ -2,12 +2,11 @@ import React, { FC } from "react";
 
 import { inject, observer } from "mobx-react";
 
-import { CommonStore } from "../../core/common/CommonStore";
 import { useScrollToTop } from "../../hooks/useScrollToTop";
 import { GlobalStyles, Page } from "./{{pascalCase name}}Page.styles";
 
 type InjectedProps = {
-  commonStore: CommonStore;
+  // add injected stores here
 };
 
 export const {{pascalCase name}}Page: FC<RouteParams & InjectedProps> = ({ f7route }) => {
@@ -22,4 +21,4 @@ export const {{pascalCase name}}Page: FC<RouteParams & InjectedProps> = ({ f7rou
 
 {{pascalCase name}}Page.displayName = "{{pascalCase name}}Page";
 
-export default (inject("commonStore")(observer({{pascalCase name}}Page)) as unknown) as FC;
+export default (inject()(observer({{pascalCase name}}Page)) as unknown) as FC;

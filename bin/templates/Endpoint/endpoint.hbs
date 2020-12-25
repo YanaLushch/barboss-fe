@@ -1,5 +1,4 @@
 import { get, post, put, remove } from "../core/http";
-import { commonStore } from "../core/common";
 
 export interface {{pascalCase name}} {
   id: string;
@@ -7,7 +6,7 @@ export interface {{pascalCase name}} {
 
 export class {{pascalCase name}}Api {
   static get endpoint(): string {
-    return `/api/base/${commonStore.getApiParam("accountNumber")}/{{camelCase name}}`;
+    return `/api/base/{{camelCase name}}`;
   }
 
   // api actions

@@ -2,11 +2,10 @@ import React, { FC } from "react";
 
 import { inject, observer } from "mobx-react";
 
-import { CommonStore } from "../../core/common/CommonStore";
 import { GlobalStyles, Container } from "./{{pascalCase name}}.styles";
 
 type InjectedProps = {
-  commonStore: CommonStore;
+  // add injected stores here
 };
 
 type {{pascalCase name}}Props = {
@@ -25,6 +24,6 @@ export const {{pascalCase name}}: FC<{{pascalCase name}}Props & InjectedProps> =
 
 {{pascalCase name}}.displayName = "{{pascalCase name}}";
 
-export default (inject("commonStore")(observer({{pascalCase name}})) as unknown) as FC<
+export default (inject()(observer({{pascalCase name}})) as unknown) as FC<
   {{pascalCase name}}Props
 >;
