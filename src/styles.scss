@@ -8,5 +8,16 @@
     --f7-button-border-radius: 7px;
     --f7-button-padding-horizontal: 16px;
     --f7-button-small-height: 28px;
+    --f7-card-border-radius: 10px;
+    --f7-navbar-height: 70px;
+    --f7-toolbar-height: 60px;
+    --f7-toolbar-font-size: 10px;
+    --f7-toolbar-link-line-height: none;
+    .toolbar {
+      a {
+        display: flex;
+        flex-flow: column nowrap;
+      }
+    }
   }
 }
