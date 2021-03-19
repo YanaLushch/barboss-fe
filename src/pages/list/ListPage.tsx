@@ -1,22 +1,22 @@
 import React, { FC, ReactElement } from "react";
 
-import { inject, observer } from "mobx-react";
-
-import { useScrollToTop } from "../../hooks/useScrollToTop";
-import { GlobalStyles, Page } from "./ListPage.styles";
-import { BarberCard } from "../../components/BarberCard";
 import {
-  NavRight,
   Link,
-  Subnavbar,
   Navbar,
+  NavRight,
   Searchbar,
+  Subnavbar,
   Toolbar,
 } from "framework7-react";
+import { inject, observer } from "mobx-react";
+
 import { barbers } from "../../__mocks__/barbers";
 import { Barber } from "../../api/Barber";
+import { BarberCard } from "../../components/BarberCard";
+import { useScrollToTop } from "../../hooks/useScrollToTop";
+import { GlobalStyles, Page } from "./ListPage.styles";
 
-export const ListPage: FC<RouteParams> = ({ f7route }) => {
+export const ListPage: FC<RouteParams> = ({ f7router }) => {
   useScrollToTop();
 
   return (
@@ -35,7 +35,12 @@ export const ListPage: FC<RouteParams> = ({ f7route }) => {
       </Navbar>
       {barbers.map(
         (item: Barber): ReactElement => (
-          <BarberCard key={item.id} barber={item} />
+          <div
+            key={item.id}
+            onClick={(): void => f7router.navigate(`/profile/${item.id}/`)}
+          >
+            <BarberCard key={item.id} barber={item} />
+          </div>
         )
       )}
       <Toolbar bottom={true}>

@@ -10,5 +10,23 @@ export const barbers: Barber[] = [
     additionalServices: ["card-payment", "home-service", "drinks"],
     rank: 4.5,
     averagePrice: 300,
+    services: [
+      {
+        name: "Classic haircut",
+        price: 250,
+      },
+      {
+        name: "Non-classic haircut",
+        price: 250,
+      },
+      {
+        name: "Super-classic haircut",
+        price: 350,
+      },
+      {
+        name: "Beard cut",
+        price: 100,
+      },
+    ],
   },
 ];

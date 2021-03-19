@@ -15,6 +15,12 @@ export interface Barber {
   additionalServices: AdditionalServices[];
   rank: number;
   averagePrice: number;
+  services: Service[];
 }
+
+export type Service = {
+  name: string;
+  price: number;
+};
 
 export class BarberApi {}
